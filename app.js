@@ -9,3 +9,19 @@
 //     В ідеалі ще реалізувати forgot password, написати документацію по ендпоінтах та залити це на AWS.
 //
 //     Самі круті можуть ще зробити фронт під це все діло.
+
+const express = require('express');
+
+const app = express();
+
+app.get('/', (req, res) => {
+    res.send('hello world');
+});
+
+app.post('/', (req, res) => {
+    res.send('POST method is ready');
+});
+
+app.listen(5000, () => {
+    console.log('Port 5000 is being listened');
+});
