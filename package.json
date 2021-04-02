@@ -1,8 +1,7 @@
 {
   "name": "node_crudtask",
   "version": "1.0.0",
-  "description": "",
-  "main": ".eslintrc.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -53,5 +52,14 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrey-kupets/node_crudTask.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andrey-kupets/node_crudTask/issues"
+  },
+  "homepage": "https://github.com/andrey-kupets/node_crudTask#readme",
+  "description": ""
 }
