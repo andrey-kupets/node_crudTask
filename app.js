@@ -10,7 +10,12 @@
 //
 //     Самі круті можуть ще зробити фронт під це все діло.
 
+const dotenv = require('dotenv');
 const express = require('express');
+
+dotenv.config();
+
+const { config: { PORT } } = require('./config');
 
 const app = express();
 
@@ -22,6 +27,6 @@ app.post('/', (req, res) => {
     res.send('POST method is ready');
 });
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
     console.log('Port 5000 is being listened');
 });
