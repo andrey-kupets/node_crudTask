@@ -1,3 +1,4 @@
 module.exports = {
-    dbElementsEnum: require('./dbElements.enum')
+    dbCollectionsEnum: require('./dbCollections.enum'),
+    userTypesEnum: require('./userTypes.enum'),
 };

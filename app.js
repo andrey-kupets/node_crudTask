@@ -1,32 +1,22 @@
-// Потрібно реалізувати CRUD на юзерів.
-//     Юзер може зараєструватись. Його аккаут буде не активовано. Але на пошту прийде мейл з підтвердженням.
-//     Після переходу по лінці з мейла аккаунт юзера стане активним та доступним для логінації.
-//     Коли ви залогінились, то ви можете оновити данні про себе.
-//     Такоє ви можете стерти свій аккаут. Але видалення аккаунту не повне, а через soft delete.
-// При реєстрації та оновленні юзер може загрузити собі аватар.
-//     Коли юзер не відвідує сайт довше ніж тиждень, то його буде автоматом розлоговано.
-//
-//     В ідеалі ще реалізувати forgot password, написати документацію по ендпоінтах та залити це на AWS.
-//
-//     Самі круті можуть ще зробити фронт під це все діло.
-
 const dotenv = require('dotenv');
 const express = require('express');
+const cors = require('cors');
 
 dotenv.config();
 
 const { config: { PORT } } = require('./config');
 
 const app = express();
+app.use(cors());
 
 app.get('/', (req, res) => {
-    res.send('hello world');
+  res.send('hello world');
 });
 
 app.post('/', (req, res) => {
-    res.send('POST method is ready');
+  res.send('POST method is ready');
 });
 
 app.listen(PORT, () => {
-    console.log('Port 5000 is being listened');
+  console.log('Port 5000 is being listened');
 });
