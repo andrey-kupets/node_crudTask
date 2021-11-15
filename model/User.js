@@ -38,4 +38,8 @@ const userScheme = new Schema({
   },
 }, { timestamps: true, toObject: { virtuals: true }, toJSON: { virtuals: true } });
 
+userScheme.virtual('full_name').get(function() {
+  return `${this.first_name} ${this.last_name}`;
+});
+
 module.exports = model(USER, userScheme);

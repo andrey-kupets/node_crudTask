@@ -1,5 +1,5 @@
 module.exports = {
-  ADMIN: 'Admin',
+  ADMIN: 'Administrator',
   CUSTOMER: 'Customer',
   DRIVER: 'Driver',
   MANAGER: 'Manager',

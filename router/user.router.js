@@ -1,13 +1,13 @@
 const router = require('express').Router();
 
 const { userController } = require('../controller');
-const { userMiddleware } = require('../middleware');
+// const { userMiddleware } = require('../middleware');
 
 router.route('/')
-  .get(userController.getUsers)
+  // .get(userController.getUsers)
   .post(
-    userMiddleware.isUserValid,
-    userMiddleware.doesUserAlreadyExist,
+    // userMiddleware.isUserValid,
+    // userMiddleware.doesUserAlreadyExist,
     userController.createUser
   );
 
