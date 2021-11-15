@@ -1,22 +1,44 @@
+const cors = require('cors');
 const dotenv = require('dotenv');
 const express = require('express');
-const cors = require('cors');
+const mongoose = require('mongoose');
 
 dotenv.config();
 
-const { config: { PORT } } = require('./config');
+const { config: { MONGO_URL, PORT } } = require('./config');
 
 const app = express();
+
+_connectDB();
+
 app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-  res.send('hello world');
-});
-
-app.post('/', (req, res) => {
-  res.send('POST method is ready');
+// eslint-disable-next-line no-unused-vars
+app.use('*', (err, req, res, next) => {
+  res
+    .status(err.status || 500)
+    .json({
+      customCode: err.customCode || 0,
+      message: err.message || '',
+    });
 });
 
 app.listen(PORT, () => {
-  console.log('Port 5000 is being listened');
+  console.log(`Port ${PORT} is being listened`);
 });
+
+function _connectDB() {
+  mongoose.connect(MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+  });
+
+  const { connection } = mongoose;
+
+  connection.on('error', (error) => {
+    console.log(error);
+  });
+}
