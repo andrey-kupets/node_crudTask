@@ -21,11 +21,3 @@ module.exports = Joi.object({
   user_type: Joi.string()
     .default(userTypesEnum.CUSTOMER),
 });
-
-// -i d
-// - username (unique)
-// - first_name
-// - last_name
-// - email (valid email address.)
-// - password (min length 8. at least one number and one letter )
-// - user_type ("Admin", "Driver')

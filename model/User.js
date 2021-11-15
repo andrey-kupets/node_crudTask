@@ -39,11 +39,3 @@ const userScheme = new Schema({
 }, { timestamps: true, toObject: { virtuals: true }, toJSON: { virtuals: true } });
 
 module.exports = model(USER, userScheme);
-
-// -i d
-// - username (unique)
-// - first_name
-// - last_name
-// - email (valid email address.)
-// - password (min length 8. at least one number and one letter )
-// - user_type ("Admin", "Driver')
