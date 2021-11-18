@@ -17,6 +17,6 @@ router.use('/:userId',
 
 router.route('/:userId')
   .delete(userController.removeUserById)
-  .put(userController.updateUser);
+  .put(userMiddleware.isUserValid, userController.updateUser);
 
 module.exports = router;
